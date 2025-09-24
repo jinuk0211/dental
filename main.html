@@ -1,0 +1,657 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oral Health Check App - UI/UX Design</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+            color: #2c3e50;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .header h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            color: #7f8c8d;
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .screens-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .phone-mockup {
+            background: linear-gradient(145deg, #ffffff, #f0f0f0);
+            border-radius: 30px;
+            padding: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            position: relative;
+            min-height: 600px;
+        }
+        
+        .phone-screen {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 20px;
+            height: 100%;
+            border: 2px solid #e9ecef;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .screen-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #3498db;
+        }
+        
+        /* Home Screen Styles */
+        .home-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .app-title {
+            font-size: 2rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        
+        .app-subtitle {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+        }
+        
+        .main-button {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 20px 30px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            width: 100%;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(52, 152, 219, 0.3);
+        }
+        
+        .main-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 25px rgba(52, 152, 219, 0.4);
+        }
+        
+        .secondary-button {
+            background: #ffffff;
+            color: #2c3e50;
+            border: 3px solid #3498db;
+            border-radius: 15px;
+            padding: 15px 25px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            width: 100%;
+            margin-bottom: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .secondary-button:hover {
+            background: #3498db;
+            color: white;
+        }
+        
+        .camera-icon, .history-icon, .settings-icon {
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+        
+        /* Photo Capture Screen */
+        .camera-container {
+            background: #000;
+            border-radius: 15px;
+            height: 300px;
+            margin-bottom: 20px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .camera-guide {
+            border: 3px dashed #3498db;
+            border-radius: 10px;
+            width: 200px;
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #3498db;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+        
+        .guide-text {
+            background: #e8f4fd;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .guide-text h3 {
+            color: #2c3e50;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .guide-text p {
+            color: #7f8c8d;
+            font-size: 1rem;
+        }
+        
+        .capture-button {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+            font-size: 2rem;
+            cursor: pointer;
+            margin: 0 auto 20px;
+            display: block;
+            box-shadow: 0 8px 20px rgba(231, 76, 60, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        .capture-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 12px 25px rgba(231, 76, 60, 0.4);
+        }
+        
+        /* Results Screen */
+        .result-card {
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .result-healthy {
+            background: linear-gradient(135deg, #2ecc71, #27ae60);
+            color: white;
+        }
+        
+        .result-attention {
+            background: linear-gradient(135deg, #f39c12, #e67e22);
+            color: white;
+        }
+        
+        .result-risk {
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
+        }
+        
+        .result-icon {
+            font-size: 4rem;
+            margin-bottom: 15px;
+        }
+        
+        .result-title {
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        
+        .result-description {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .action-button {
+            flex: 1;
+            padding: 12px 15px;
+            border: 2px solid white;
+            background: transparent;
+            color: white;
+            border-radius: 10px;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .action-button:hover {
+            background: white;
+            color: #2c3e50;
+        }
+        
+        /* History Screen */
+        .history-item {
+            background: white;
+            border-radius: 12px;
+            padding: 15px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            border-left: 5px solid #3498db;
+        }
+        
+        .history-date {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-bottom: 8px;
+        }
+        
+        .history-result {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .history-healthy { color: #27ae60; }
+        .history-attention { color: #f39c12; }
+        .history-risk { color: #e74c3c; }
+        
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: #3498db;
+            cursor: pointer;
+        }
+        
+        /* Design Guidelines Section */
+        .guidelines {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-top: 40px;
+        }
+        
+        .guidelines h2 {
+            color: #2c3e50;
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        
+        .guideline-section {
+            margin-bottom: 25px;
+        }
+        
+        .guideline-section h3 {
+            color: #3498db;
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+        }
+        
+        .guideline-list {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .guideline-list li {
+            background: #f8f9fa;
+            margin-bottom: 8px;
+            padding: 12px 15px;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
+        }
+        
+        .guideline-list li strong {
+            color: #2c3e50;
+        }
+        
+        /* Navigation */
+        .nav-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+        }
+        
+        .nav-button {
+            padding: 8px 15px;
+            background: #3498db;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-button:hover, .nav-button.active {
+            background: #2980b9;
+            transform: translateY(-2px);
+        }
+        
+        .screen {
+            display: none;
+        }
+        
+        .screen.active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Smart Oral Health Check App</h1>
+            <p>Minimalist UI/UX Design for Elderly Users</p>
+        </div>
+        
+        <div class="screens-grid">
+            <!-- Home Screen -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <div class="screen-title">Home Screen</div>
+                    <div class="home-header">
+                        <div class="app-title">🦷 Oral Health Check</div>
+                        <div class="app-subtitle">Simple & Easy</div>
+                    </div>
+                    
+                    <button class="main-button">
+                        <span class="camera-icon">📸</span>
+                        Check My Teeth
+                    </button>
+                    
+                    <button class="secondary-button">
+                        <span class="history-icon">📋</span>
+                        View History
+                    </button>
+                    
+                    <button class="secondary-button">
+                        <span class="settings-icon">⚙️</span>
+                        Settings
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Photo Capture Screen -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <button class="back-button">←</button>
+                    <div class="screen-title">Take Photo</div>
+                    
+                    <div class="guide-text">
+                        <h3>📍 Position Guide</h3>
+                        <p>Hold phone 6 inches away. Open mouth wide. Align teeth in the blue box.</p>
+                    </div>
+                    
+                    <div class="camera-container">
+                        <div class="camera-guide">
+                            Position your teeth here
+                        </div>
+                    </div>
+                    
+                    <!-- <button class="capture-button">📸</button> -->
+                    <input type="file" id="image-upload-input" accept="image/*" style="display: none;">
+                    <button class="capture-button" id="capture-btn">📸</button>
+                    
+                    <button class="secondary-button">Cancel</button>
+                </div>
+            </div>
+            
+            <!-- Results Screen - Healthy -->
+            <div class="phone-mockup" id="result-screen" style="display: none;">
+                <div class="phone-screen">
+                    <button class="back-button">←</button>
+                    <div class="screen-title">Analysis Results</div>
+                    <div id="result-card-container">
+                        </div>
+                </div>
+            </div>
+            
+            <!-- Results Screen - Attention -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <button class="back-button">←</button>
+                    <div class="screen-title">Analysis Results</div>
+                    
+                    <div class="result-card result-attention">
+                        <div class="result-icon">⚠️</div>
+                        <div class="result-title">Needs Attention</div>
+                        <div class="result-description">Some areas may need care. Consider visiting your dentist soon.</div>
+                        <div class="action-buttons">
+                            <button class="action-button">Save & Remind</button>
+                            <button class="action-button">Take Another</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="screens-grid">
+            <!-- Results Screen - Risk -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <button class="back-button">←</button>
+                    <div class="screen-title">Analysis Results</div>
+                    
+                    <div class="result-card result-risk">
+                        <div class="result-icon">🚨</div>
+                        <div class="result-title">Requires Care</div>
+                        <div class="result-description">Please see a dentist as soon as possible for proper care.</div>
+                        <div class="action-buttons">
+                            <button class="action-button">Save & Remind</button>
+                            <button class="action-button">Find Dentist</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- History Screen -->
+            <div class="phone-mockup">
+                <div class="phone-screen">
+                    <button class="back-button">←</button>
+                    <div class="screen-title">Health History</div>
+                    
+                    <div class="history-item">
+                        <div class="history-date">Today, 2:30 PM</div>
+                        <div class="history-result history-healthy">✅ Healthy</div>
+                        <div>Great oral health condition</div>
+                    </div>
+                    
+                    <div class="history-item">
+                        <div class="history-date">3 days ago</div>
+                        <div class="history-result history-attention">⚠️ Needs Attention</div>
+                        <div>Some areas need care</div>
+                    </div>
+                    
+                    <div class="history-item">
+                        <div class="history-date">1 week ago</div>
+                        <div class="history-result history-healthy">✅ Healthy</div>
+                        <div>Good condition overall</div>
+                    </div>
+                    
+                    <button class="main-button">📸 Take New Check</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Design Guidelines -->
+        <div class="guidelines">
+            <h2>🎨 Design Guidelines & Specifications</h2>
+            
+            <div class="guideline-section">
+                <h3>Typography & Readability</h3>
+                <ul class="guideline-list">
+                    <li><strong>Primary Font:</strong> Segoe UI, 18px+ minimum for body text</li>
+                    <li><strong>Button Text:</strong> 20-24px, bold weight for emphasis</li>
+                    <li><strong>Headlines:</strong> 28-32px, high contrast colors</li>
+                    <li><strong>Line Height:</strong> 1.6 for optimal reading comfort</li>
+                </ul>
+            </div>
+            
+            <div class="guideline-section">
+                <h3>Color Palette & Contrast</h3>
+                <ul class="guideline-list">
+                    <li><strong>Primary Blue:</strong> #3498db (buttons, accents)</li>
+                    <li><strong>Success Green:</strong> #2ecc71 (healthy status)</li>
+                    <li><strong>Warning Orange:</strong> #f39c12 (attention needed)</li>
+                    <li><strong>Alert Red:</strong> #e74c3c (requires immediate care)</li>
+                    <li><strong>Background:</strong> #f8f9fa (low strain, high readability)</li>
+                </ul>
+            </div>
+            
+            <div class="guideline-section">
+                <h3>Button Design & Spacing</h3>
+                <ul class="guideline-list">
+                    <li><strong>Minimum Size:</strong> 44px height (Apple HIG standard)</li>
+                    <li><strong>Touch Target:</strong> 48px+ with adequate spacing</li>
+                    <li><strong>Border Radius:</strong> 15-20px for modern, friendly appearance</li>
+                    <li><strong>Margin:</strong> 20px between major elements</li>
+                </ul>
+            </div>
+            
+            <div class="guideline-section">
+                <h3>Accessibility Features</h3>
+                <ul class="guideline-list">
+                    <li><strong>Icons:</strong> Paired with text labels, emoji-based for universality</li>
+                    <li><strong>Visual Feedback:</strong> Color + icon + text for status communication</li>
+                    <li><strong>Error Prevention:</strong> Clear guidance and confirmation dialogs</li>
+                    <li><strong>Navigation:</strong> Simple back buttons, consistent placement</li>
+                </ul>
+            </div>
+            
+            <div class="guideline-section">
+                <h3>Photo Capture UX</h3>
+                <ul class="guideline-list">
+                    <li><strong>Visual Guide:</strong> Dashed border overlay for teeth positioning</li>
+                    <li><strong>Instructions:</strong> Step-by-step text above camera view</li>
+                    <li><strong>Capture Button:</strong> Large, red, circular - intuitive camera metaphor</li>
+                    <li><strong>Feedback:</strong> Immediate visual confirmation after capture</li>
+                </ul>
+            </div>
+            
+            <div class="guideline-section">
+                <h3>Results Presentation</h3>
+                <ul class="guideline-list">
+                    <li><strong>Three-Tier System:</strong> Healthy (green), Attention (orange), Risk (red)</li>
+                    <li><strong>Visual Hierarchy:</strong> Icon → Status → Description → Actions</li>
+                    <li><strong>Language:</strong> Simple, non-medical terms for clarity</li>
+                    <li><strong>Action Buttons:</strong> Clear next steps, max 2 options to avoid confusion</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const captureButton = document.getElementById('capture-btn');
+        const fileInput = document.getElementById('image-upload-input');
+        const resultScreen = document.getElementById('result-screen');
+        const resultContainer = document.getElementById('result-card-container');
+        
+        // When the camera button is clicked, trigger the hidden file input
+        captureButton.addEventListener('click', () => {
+            fileInput.click();
+        });
+
+        // When a file is selected, upload it to the API
+        fileInput.addEventListener('change', async (event) => {
+            const file = event.target.files[0];
+            if (!file) {
+                return; // No file selected
+            }
+
+            const formData = new FormData();
+            formData.append('file', file);
+
+            // Show a loading indicator
+            resultContainer.innerHTML = `<p style="text-align: center; padding: 20px;">Analyzing, please wait...</p>`;
+            // Here you would navigate to the results screen in a real app
+            // For this demo, we'll just log to console and update the container
+            console.log("Uploading file for analysis...");
+
+
+            try {
+                const apiUrl = 'http://127.0.0.1:8000/analyze/';
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    body: formData,
+                });
+
+                if (!response.ok) {
+                    throw new Error(`API Error: ${response.statusText}`);
+                }
+
+                const result = await response.json();
+                
+                displayResult(result);
+
+            } catch (error) {
+                console.error('Failed to analyze image:', error);
+                resultContainer.innerHTML = `<p style="text-align: center; color: red; padding: 20px;">Error during analysis. Please try again.</p>`;
+            }
+        });
+        
+        function displayResult(result) {
+            // Dynamically create the result card based on API response
+            resultContainer.innerHTML = `
+                <div class="result-card ${result.css_class}">
+                    <div class="result-icon">${result.icon}</div>
+                    <div class="result-title">${result.status}</div>
+                    <div class="result-description">${result.description}</div>
+                    <div class="action-buttons">
+                        <button class="action-button">Save Result</button>
+                        <button class="action-button">Take Another</button>
+                    </div>
+                </div>
+            `;
+            // In a real app, you would now show the result screen.
+            // For this demo, we are just populating the pre-existing (but hidden) div.
+            // You can add logic to hide other screens and show this one.
+        }
+    </script>
+  
+</body>
+</html>
