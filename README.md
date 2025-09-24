@@ -21,3 +21,18 @@ https://link.springer.com/article/10.1007/s11042-023-16776-x
 https://github.com/mmasdar/end-to-end-dental-disease
 
 https://github.com/CasonKChance/Dental-Guard
+
+데이터셋
+
+https://www.kaggle.com/datasets/salmansajid05/oral-diseases
+
+
+https://physionet.org/content/multimodal-dental-dataset/1.1.0/
+
+https://www.nature.com/articles/s41597-025-05647-9
+
+https://translational-medicine.biomedcentral.com/articles/10.1186/s12967-024-05741-3
+
+https://link.springer.com/article/10.1007/s11042-023-16776-x
+
+https://pmc.ncbi.nlm.nih.gov/articles/PMC11633071/
