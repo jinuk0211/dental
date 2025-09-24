@@ -2,13 +2,13 @@
 
 <img width="1118" height="879" alt="image" src="https://github.com/user-attachments/assets/46ef28dd-0dee-4ae6-8a17-1ca594103cd3" />
 
-프론트엔드 코드 deploy
+#프론트엔드 코드 netlify 사용 -> deploy
 <img width="1920" height="871" alt="image" src="https://github.com/user-attachments/assets/7a419650-17fc-4cb1-bc76-46222b5171d3" />
 
-서버 실행 render 사용 -> fastapi rest api 서버
+#서버 실행 render 사용 -> fastapi rest api 서버
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/0768225e-0eee-4b38-bbf3-ab1249e17ffe" />
 
-# dental
+# main logic
 
 구강 질병 체크 (ex: 충치, 치주질환 등)
 <img width="527" height="669" alt="image" src="https://github.com/user-attachments/assets/b90be1f0-52be-4fbb-b43f-be8c4c6db9c4" />
