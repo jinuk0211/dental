@@ -22,6 +22,8 @@ https://github.com/mmasdar/end-to-end-dental-disease
 
 https://github.com/CasonKChance/Dental-Guard
 
+https://github.com/Priyanshu9898/Oral-Disease-Classification
+
 데이터셋
 
 https://www.kaggle.com/datasets/salmansajid05/oral-diseases
