@@ -15,11 +15,14 @@
 # main logic
 
 구강 질병 체크 (ex: 충치, 치주질환 등)
+
 <img width="527" height="669" alt="image" src="https://github.com/user-attachments/assets/b90be1f0-52be-4fbb-b43f-be8c4c6db9c4" />
 
 리포트 생성 (google/med-gemma-4b 사용)
 <img width="1292" height="486" alt="image" src="https://github.com/user-attachments/assets/91a67632-8cc1-4619-b8db-e30a1c888a6f" />
 
+reference
+--------------
 https://arxiv.org/pdf/2402.04408
 
 #노트북 LLM
