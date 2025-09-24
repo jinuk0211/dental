@@ -4,7 +4,6 @@
 
 코드
 -------
-디자인
 <img width="1118" height="879" alt="image" src="https://github.com/user-attachments/assets/46ef28dd-0dee-4ae6-8a17-1ca594103cd3" />
 
 #프론트엔드 코드 netlify 사용 -> deploy
